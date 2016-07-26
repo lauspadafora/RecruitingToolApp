@@ -1,0 +1,59 @@
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+	<!-- sidebar: style can be found in sidebar.less -->
+	<section class="sidebar">
+		<!-- search form -->
+		<form action="#" method="get" class="sidebar-form">
+			<div class="input-group">
+				<input type="text" name="q" class="form-control" placeholder="Search..." />
+				<span class="input-group-btn">
+					<button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+				</span>
+			</div>
+		</form>
+		<!-- /.search form -->
+		<!-- sidebar menu: : style can be found in sidebar.less -->
+		<ul class="sidebar-menu">
+			<li class="header">MENU</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-tags"></i>
+					<span>Categories</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					{{#link-to 'category' tagName="li"}}<a href=""><i class="fa fa-list"></i> List of Categories</a>{{/link-to}}
+					{{#link-to 'category.new' tagName="li"}}<a href=""><i class="fa fa-plus-square"></i> New Category</a>{{/link-to}}		    
+				</ul>
+			</li>
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-pencil-square-o"></i>
+					<span>Answer Types</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					{{#link-to 'answertype' tagName="li"}}<a href=""><i class="fa fa-list"></i> List of Answer Types</a>{{/link-to}}
+					{{#link-to 'answertype.new' tagName="li"}}<a href=""><i class="fa fa-plus-square"></i> New Answer Type</a>{{/link-to}}		    
+				</ul>
+			</li>	
+			<li class="treeview">
+				<a href="#">
+					<i class="fa fa-question-circle"></i>
+					<span>Questions</span>
+					<i class="fa fa-angle-left pull-right"></i>
+				</a>
+				<ul class="treeview-menu">
+					{{#link-to 'question' tagName="li"}}<a href=""><i class="fa fa-list"></i> List of Questions</a>{{/link-to}}
+					{{#link-to 'question.new' tagName="li"}}<a href=""><i class="fa fa-plus-square"></i> New Question</a>{{/link-to}}		    
+				</ul>
+			</li>
+			<li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+			<li class="header">LABELS</li>
+			<li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+			<li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+			<li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+		</ul>
+	</section>
+	<!-- /.sidebar -->
+</aside>

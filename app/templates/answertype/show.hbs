@@ -1,0 +1,70 @@
+<div class="box box-default">
+	<div class="box-header">
+		<h3 class="box-title">Answer Type: {{model.nombre}}</h3>
+	</div><!-- /.box-header -->
+    <div class="box-body">		
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.name }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Short Name:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.short }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->   
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Created At:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.created_at }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->     
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Created By:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.created_by }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->  
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Updated At:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.updated_at }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->   
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Updated By:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.updated_by }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->        
+    </div><!-- /.box-body -->   
+	<div class="box-footer">
+    {{#link-to 'answertype.index' class='btn btn-default'}}Volver{{/link-to}}
+  </div><!-- /.box-footer -->
+</div><!-- /.box -->

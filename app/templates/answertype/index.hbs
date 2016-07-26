@@ -1,0 +1,36 @@
+<div class="box box-default">
+	<div class="box-header">
+		<h3 class="box-title">Answer Type</h3>
+		{{#link-to 'answertype.new' tagName="a" class="btn btn-sm bg-purple pull-right"}}<i class="fa fa-plus-square"></i> New Answer Type{{/link-to}} 
+	</div><!-- /.box-header -->
+	<div class="box-body">		
+		<table id="example1" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+                    <th>Short Name (Abbr.)</th>
+					<th>Created At</th>
+					<th>Created By</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>	
+				{{#each model as |answertype|}}
+				<tr>
+					<td>{{answertype.id}}</td>
+					<td>{{answertype.name}}</td>
+                    <td>{{answertype.short}}</td>
+					<td>{{answertype.created_at}}</td>
+					<td>{{answertype.created_by}}</td>	
+					<td>
+						{{#link-to 'answertype.show' answertype.id class='btn btn-success btn-xs glyphicon glyphicon-info-sign'}}{{/link-to}}
+						{{#link-to 'answertype.edit' answertype.id class='btn btn-primary btn-xs glyphicon glyphicon-edit'}}{{/link-to}}
+						<button type="button" class="btn btn-danger btn-xs glyphicon glyphicon-trash" {{action 'deleteAnswerType' answertype}}></button>
+        			</td>
+				</tr>
+				{{/each}}
+			</tbody>			
+		</table>
+	</div><!-- /.box-body -->
+</div><!-- /.box -->
