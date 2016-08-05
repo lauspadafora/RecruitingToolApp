@@ -1,16 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model() {        
+	model() {        
     	return this.store.createRecord('category');
 	},
 
-    /*setupController: function(controller) {
+    setupController: function(controller, model) {
+		this._super(controller, model);
     	controller.set('buttonLabel', 'Save');
-  	},*/
+  	},
 
     actions: {
-        saveCategory(newCategory) {  
+        saveCategory(newCategory) {  			
 			if (newCategory.get('short').length >= 4) {      
 				newCategory.set('created_at', new Date().toLocaleString());
 				newCategory.set('created_by', 'admin');
@@ -22,7 +23,6 @@ export default Ember.Route.extend({
 				});    	     	     	
 			}
 			else {
-				alert("asdasd");
 				this.set('responseMessage', 'Please ensure all required fields are complete and all completed fields are valid.');
 			}
         }

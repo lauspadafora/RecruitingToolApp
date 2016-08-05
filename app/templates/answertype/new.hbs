@@ -1,27 +1,15 @@
 <div class="box box-default">
 	<div class="box-header">
-		<h3 class="box-title">Answer Type</h3>
+		<h3 class="box-title">New Answer Type</h3>
 	</div><!-- /.box-header -->
 	<div class="box-body">
-		<form class="form-horizontal">
-            <div class="box-body">
-                <div class="form-group">
-                    <label for="" class="col-sm-2 control-label">Name</label>
-                    <div class="col-sm-10">
-                        {{input type="text" value=model.name class="form-control" placeholder="Name of the new answer type"}}
-                    </div>      
-                </div>
-                <div class="form-group">
-                    <label for="" class="col-sm-2 control-label">Short Name (Abbr.)</label>
-                    <div class="col-sm-10">
-                        {{input type="text" value=model.short class="form-control" placeholder="Abbreviation for the new answer type"}}
-                    </div>      
-                </div>
-            </div><!-- /.box-body -->
-            <div class="box-footer">
-                {{#link-to 'answertype.index' class='btn btn-default'}}Back{{/link-to}}
-                <button type="button" class="btn bg-purple pull-right" {{action 'saveAnswerType' model}}>Guardar</button>
-            </div><!-- /.box-footer -->
-        </form>   	    
+		{{#if responseMessage}}
+		<div class="alert alert-danger alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4><i class="icon fa fa-ban"></i>Oops!</h4>
+				{{ responseMessage }}
+		</div>              
+		{{/if}}
+        {{answertype-form answertype=model buttonLabel=buttonLabel action='saveAnswerType'}}    
 	</div><!-- /.box-body -->
 </div><!-- /.box -->

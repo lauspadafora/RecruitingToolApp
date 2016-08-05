@@ -1,12 +1,35 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend({    
+    category: null,
+    answertype: null,
+
     model() {        
-    	return this.store.createRecord('question');
+    	return Ember.RSVP.hash({
+			question: this.store.createRecord('question'),
+			categorias: this.store.findAll('category'),
+			tiposrespuestas: this.store.findAll('answertype'),
+		});    	
 	},
 
+    setupController: function(controller, model) {
+		this._super(controller, model);
+    	controller.set('buttonLabel', 'Save');
+  	},
+
     actions: {
-        saveQuestion(newQuestion) {            
+        selectCategory(val) {
+			console.log("Question Route Category");
+         	console.log(val);
+			this.set('category', val);
+      	},
+
+        selectAnswerType(val) {
+			console.log("Question Route AnswerType");
+         	console.log(val);
+			this.set('answertype', val);
+      	},
+        saveQuestion(newQuestion) {       
 			/*newQuestion.set('created_at', new Date().toLocaleString());
 			newQuestion.set('created_by', 'admin');
 			newQuestion.set('updated_at', new Date().toLocaleString());
@@ -60,25 +83,27 @@ export default Ember.Route.extend({
 			newQuestion.set('updated_by', 'admin');  
             
             let self = this;
-            var category = null;
-            var answertype = null;
-            
-            this.store.findRecord('category', '-KNJC2anvx_DO0dqigOz').then(c => {
+            let category = null;
+            let answertype = null;
+
+            self.store.findRecord('category', self.get('category')).then(c => {
                 category = c;
                 category.get('questions').addObject(newQuestion).then(() => {
-                    self.store.findRecord('answertype', '-KNJCA6cAK7E0p5U4lPj').then(at => {
+                    self.store.findRecord('answertype', self.get('answertype')).then(at => {
                         answertype = at;
                         answertype.get('questions').addObject(newQuestion).then(() => {
                             newQuestion.save().then(() => { 
-                                category.save();
-                                answertype.save();
-                                //this.store.unloadRecord(newQuestion);
-	    		                this.transitionTo('question.index'); 
+                                category.save().then(() => {
+                                    answertype.save().then(() => {
+                                        //this.store.unloadRecord(newQuestion);
+                                        self.transitionTo('question.index');
+                                    });
+                                });
                             });  
                         });
                     });
                 });
-            });  
+            }); 
         }
     }
 });

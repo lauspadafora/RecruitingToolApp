@@ -3,25 +3,6 @@
 		<h3 class="box-title">Question</h3>
 	</div><!-- /.box-header -->
 	<div class="box-body">
-		<form class="form-horizontal">
-            <div class="box-body">
-                <div class="form-group">
-                    <label for="" class="col-sm-2 control-label">Code</label>
-                    <div class="col-sm-10">
-                        {{input type="text" value=model.code class="form-control" placeholder="Code of the new question"}}
-                    </div>      
-                </div>
-                <div class="form-group">
-                    <label for="" class="col-sm-2 control-label">Body</label>
-                    <div class="col-sm-10">
-                        {{textarea value=model.body class="form-control" placeholder="Body of the new question" rows="5"}}
-                    </div>      
-                </div>
-            </div><!-- /.box-body -->
-            <div class="box-footer">
-                {{#link-to 'category.index' class='btn btn-default'}}Back{{/link-to}}
-                <button type="button" class="btn bg-purple pull-right" {{action 'saveQuestion' model}}>Guardar</button>
-            </div><!-- /.box-footer -->
-        </form>   	    
+	    {{question-form questionModel=model buttonLabel=buttonLabel saveQuestion='saveQuestion' selectCategory='selectCategory' selectAnswerType='selectAnswerType'}}     		    
 	</div><!-- /.box-body -->
 </div><!-- /.box -->

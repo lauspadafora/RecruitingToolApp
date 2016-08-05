@@ -1,1 +1,15 @@
-{{outlet}}
+<div class="box box-default">
+	<div class="box-header">
+		<h3 class="box-title">Answer Type</h3>
+	</div><!-- /.box-header -->
+	<div class="box-body">
+		{{#if responseMessage}}
+		<div class="alert alert-danger alert-dismissible">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<h4><i class="icon fa fa-ban"></i>Oops!</h4>
+				{{ responseMessage }}
+		</div>              
+		{{/if}}
+        {{answertype-form answertype=model buttonLabel=buttonLabel action='updateAnswerType'}}       
+	</div><!-- /.box-body -->
+</div><!-- /.box -->

@@ -4,11 +4,9 @@ import DS from 'ember-data';
 // import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
-    code: DS.attr('string'),
     body: DS.attr('string'),
-    category: DS.belongsTo('category', { async: true }),
-    answertype: DS.belongsTo('answertype', { async: true }),
-    answers: DS.hasMany('answer', { async: true }),
+    is_correct: DS.attr('boolean'),
+    question: DS.belongsTo('question', { async: true }),
     created_at: DS.attr('string'),
  	created_by: DS.attr('string'),
  	updated_at: DS.attr('string'),

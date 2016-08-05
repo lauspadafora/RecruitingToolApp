@@ -1,1 +1,34 @@
-{{outlet}}
+<div class="box box-default">
+	<div class="box-header">
+		<h3 class="box-title">Questions List</h3>
+		{{#link-to 'question.new' tagName="a" class="btn btn-sm bg-purple pull-right"}}<i class="fa fa-plus-square"></i> New Question{{/link-to}} 
+	</div><!-- /.box-header -->
+	<div class="box-body">		
+		<table id="example1" class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Code</th>
+                    <th>Category</th>
+					<th>Answer Type</th>
+					<th>Created At</th>
+                    <th>Created By</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>	
+				{{#each model as |question|}}
+				<tr>
+					<td>{{question.id}}</td>
+					<td>{{question.code}}</td>
+                    <td>{{question.category.name}}</td>
+                    <td>{{question.answertype.name}}</td>
+                    <td>{{question.created_at}}</td>
+					<td>{{question.created_by}}</td>
+                    <td></td>
+				</tr>
+				{{/each}}
+			</tbody>			
+		</table>
+	</div><!-- /.box-body -->
+</div><!-- /.box -->
