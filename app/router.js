@@ -6,21 +6,22 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('question', function() {
-    this.route('new');
-    this.route('show', { path: '/show/:id' });
-    this.route('edit', { path: '/edit/:id' });
+  this.authenticatedRoute('question', function() {
+    this.authenticatedRoute('new');
+    this.authenticatedRoute('show', { path: '/show/:id' });
+    this.authenticatedRoute('edit', { path: '/edit/:id' });
   });
-  this.route('category', function() {
-    this.route('new');
-    this.route('show', { path: '/show/:id' });
-    this.route('edit', { path: '/edit/:id' });
+  this.authenticatedRoute('category', function() {
+    this.authenticatedRoute('new');
+    this.authenticatedRoute('show', { path: '/show/:id' });
+    this.authenticatedRoute('edit', { path: '/edit/:id' });
   });
-  this.route('answertype', function() {
-    this.route('new');
-    this.route('show', { path: '/show/:id' });
-    this.route('edit', { path: '/edit/:id' });
+  this.authenticatedRoute('answertype', function() {
+    this.authenticatedRoute('new');
+    this.authenticatedRoute('show', { path: '/show/:id' });
+    this.authenticatedRoute('edit', { path: '/edit/:id' });
   });
+  this.route('sign-in');
 });
 
 export default Router;
