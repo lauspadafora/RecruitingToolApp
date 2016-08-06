@@ -32,5 +32,18 @@ module.exports = function(defaults) {
   app.import('bower_components/AdminLTE/dist/js/pages/dashboard.js');  
   app.import('bower_components/AdminLTE/dist/js/demo.js');
 
+  //Fonts
+  app.import('bower_components/AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.ttf', {
+    destDir: 'fonts'
+  }); 
+  
+  app.import('bower_components/AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.woff', {
+    destDir: 'fonts'
+  });
+  
+  app.import('bower_components/AdminLTE/bootstrap/fonts/glyphicons-halflings-regular.woff2', {
+    destDir: 'fonts'
+  });
+
   return app.toTree();
 };

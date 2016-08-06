@@ -7,7 +7,7 @@ export default Ember.Route.extend({
 
     actions: {
       accessDenied() {
-        this.transitionTo('/');
+        this.transitionTo('sign-in');
       }
     }   
 });

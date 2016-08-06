@@ -6,6 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.authenticatedRoute('index', { path: '/' });
   this.authenticatedRoute('question', function() {
     this.authenticatedRoute('new');
     this.authenticatedRoute('show', { path: '/show/:id' });
@@ -22,6 +23,7 @@ Router.map(function() {
     this.authenticatedRoute('edit', { path: '/edit/:id' });
   });
   this.route('sign-in');
+  this.route('sign-up');
 });
 
 export default Router;
