@@ -11,6 +11,8 @@ Router.map(function() {
     this.authenticatedRoute('new');
     this.authenticatedRoute('show', { path: '/show/:id' });
     this.authenticatedRoute('edit', { path: '/edit/:id' });
+    this.authenticatedRoute('addAnswers', { path: '/addAnswers/:id' });
+    
   });
   this.authenticatedRoute('category', function() {
     this.authenticatedRoute('new');

@@ -1,0 +1,32 @@
+<div class="box box-default">
+	<div class="box-header">
+		<h3 class="box-title">Add Answers</h3>
+	</div><!-- /.box-header -->
+	<div class="box-body">	
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Code:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.code }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                <label class="col-sm-2 control-label">Body:</label>
+                <div class="col-sm-10">
+                    <p>{{ model.body }}</p>
+                </div>                      
+                </div><!-- /.form-group -->                  
+            </div><!-- /.col -->                
+        </div><!-- /.row --> 
+        <h4 class="box-title">Possible Answers</h4>	
+	    {{answer-form }}     		    
+        {{answer-form }}
+        {{answer-form }}
+        {{answer-form }}
+	</div><!-- /.box-body -->
+</div><!-- /.box -->

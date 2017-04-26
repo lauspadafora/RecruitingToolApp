@@ -33,10 +33,10 @@
             <div class="col-sm-10">
                 {{textarea value=questionModel.question.body class="form-control" placeholder="Body of the new question" rows="5"}}
             </div>      
-        </div>
+        </div> 
     </div><!-- /.box-body -->
     <div class="box-footer">
-        {{#link-to 'category.index' class='btn btn-default'}}Back{{/link-to}}
+        {{#link-to 'question.index' class='btn btn-default'}}Back{{/link-to}}
         <button type="button" class="btn bg-purple pull-right" {{action 'saveQuestion' questionModel.question}}>Guardar</button>
     </div><!-- /.box-footer -->
 </form>  

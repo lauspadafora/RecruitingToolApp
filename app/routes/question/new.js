@@ -1,15 +1,16 @@
 import Ember from 'ember';
+import DS from 'ember-data';
 
 export default Ember.Route.extend({    
     category: null,
     answertype: null,
-
-    model() {        
-    	return Ember.RSVP.hash({
+    
+    model() {
+    	return Ember.RSVP.hash({            
 			question: this.store.createRecord('question'),
 			categorias: this.store.findAll('category'),
-			tiposrespuestas: this.store.findAll('answertype'),
-		});    	
+			tiposrespuestas: this.store.findAll('answertype')            
+        });    	
 	},
 
     setupController: function(controller, model) {
@@ -29,6 +30,7 @@ export default Ember.Route.extend({
          	console.log(val);
 			this.set('answertype', val);
       	},
+
         saveQuestion(newQuestion) {       
 			/*newQuestion.set('created_at', new Date().toLocaleString());
 			newQuestion.set('created_by', 'admin');

@@ -16,6 +16,6 @@ export default Ember.Component.extend({
 
         saveQuestion(val) {		   
             this.sendAction('saveQuestion', val);
-        },
+        }      
     }
 });
